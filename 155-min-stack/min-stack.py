@@ -13,15 +13,22 @@ class MinStack:
         return self.stack[-1]
 
     def getMin(self) -> int:
-        minStackArr = []
-        minStackArr.append(self.stack[-1])
-        for el in self.stack:
-            minimum = minStackArr[-1]
-            if el < minimum:
-                minStackArr.append(el)
+        lastidx = len(self.stack) - 1
+        minEl = self.stack[-1]
+        arr = [lastidx]
+        for i in range(0,len(self.stack)-1):
+            currEl = self.stack[i]
+            if currEl < minEl:
+                minEl = currEl
+                arr.append(i)
             else:
                 continue
-        return minStackArr[-1]
+
+        topidx = arr[-1]   
+        return(self.stack[arr[-1]])
+                
+
+
 
 
 # Your MinStack object will be instantiated and called as such:
