@@ -25,7 +25,7 @@ class MinStack:
                 continue
 
         topidx = arr[-1]   
-        return(self.stack[arr[-1]])
+        return(self.stack[topidx])
                 
 
 
